@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <title>Warunk Sanskuy</title>
+  </head>
+
+  <body onload="getData();">
+    <header id="notLogin">
+      <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="images/pramuja.png" alt="" class="d-inline-block align-text-top" />
+            Warunk Sanskuy
+          </a>
+          <button id="liffLoginButton" class="btn btn-success btn-small">Log in</button>
+        </div>
+      </nav>
+      <h4>Eeiittts, Silahkan login dulu ya...</h4>
+    </header>
+    <main>
+      <div id="liffAppContent" class="container mt-3 mb-5">
+        <div>
+          <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">
+                <img src="images/pramuja.png" alt="" class="d-inline-block align-text-top" />
+              </a>
+              <img src="" id="img-user" width="50" height="50" alt="Avatar" style="border-radius: 50%" />
+            </div>
+          </nav>
+        </div>
+        <div class="page-header">
+          <h5>
+            Hai <b><span id="username"></span></b> , Silahkan pilih menu dibawah ini ya...
+          </h5>
+        </div>
+        <form id="form-data">
+          <div>
+            <h4>Makanan</h4>
+            <div id="mie-goreng" class="form-row">
+              <div class="col">
+                <h5><b>Mie Goreng</b></h5>
+                <h6>Rp10000</h6>
+              </div>
+              <div class="col mt-4">
+                <span class="glyphicon glyphicon-minus" aria-hidden="true" onclick="minus('mie-goreng-quantity');"></span>
+                <span id="mie-goreng-quantity"></span>
+                <span class="glyphicon glyphicon-plus" aria-hidden="true" onclick="add('mie-goreng-quantity');"></span>
+              </div>
+            </div>
+            <div id="mie-rebus" class="form-row">
+              <div class="col">
+                <h5><b>Mie Rebus</b></h5>
+                <h6>Rp20000</h6>
+              </div>
+              <div class="col mt-4">
+                <span class="glyphicon glyphicon-minus" aria-hidden="true" onclick="minus('mie-rebus-quantity');"></span>
+                <span id="mie-rebus-quantity"></span>
+                <span class="glyphicon glyphicon-plus" aria-hidden="true" onclick="add('mie-rebus-quantity');"></span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h4>Minuman</h4>
+            <div id="kopi" class="form-row">
+              <div class="col">
+                <h5><b>Kopi</b></h5>
+                <h6>Rp15000</h6>
+              </div>
+              <div class="col mt-4">
+                <span class="glyphicon glyphicon-minus" aria-hidden="true" onclick="minus('kopi-quantity'); "></span>
+                <span id="kopi-quantity"></span>
+                <span class="glyphicon glyphicon-plus" aria-hidden="true" onclick="add('kopi-quantity'); "></span>
+              </div>
+            </div>
+            <div id="teh" class="form-row">
+              <div class="col">
+                <h5><b>Teh</b></h5>
+                <h6>Rp25000</h6>
+              </div>
+              <div class="col mt-4">
+                <span class="glyphicon glyphicon-minus" aria-hidden="true" onclick="minus('teh-quantity'); "></span>
+                <span id="teh-quantity"></span>
+                <span class="glyphicon glyphicon-plus" aria-hidden="true" onclick="add('teh-quantity');"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="col">
+              <h4>Ringkasan</h4>
+              <h6>Total : <span id="total"></span></h6>
+              <h6>Harga : <span id="orderPrice"></span></h6>
+            </div>
+            <div class="col mt-4">
+              <button class="btn btn-success" id="sendMessageButton">Pesan Sekarang</button>
+            </div>
+          </div>
+        </form>
+        <div class="buttonGroup">
+          <div class="buttonRow">
+            <button id="openWindowButton" class="btn btn-success btn-small">Open External Window</button>
+            <button id="closeWindowButton" class="btn btn-danger btn-small">Close LIFF App</button>
+            <button id="liffLogoutButton" class="btn btn-warning btn-small">Log out</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script src="script.js"></script>
+  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+</html>

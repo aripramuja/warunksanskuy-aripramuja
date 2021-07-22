@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+}
+
+body {
+  text-align: center;
+  color: white;
+  background-color: #c70039;
+}
+
+div {
+  max-width: 100%;
+  text-align: center;
+}
+
+.buttonGroup {
+  position: relative;
+  top: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (max-width: 1000px) {
+  .container {
+    width: 100%;
+    padding: 0;
+  }
+}
