@@ -129,16 +129,16 @@ document.getElementById("sendMessageButton").addEventListener("click", function 
   menu[1] = document.getElementById("mie-rebus-quantity").innerHTML + " Mie Rebus\n";
   menu[2] = document.getElementById("kopi-quantity").innerHTML + " Kopi\n";
   menu[3] = document.getElementById("teh-quantity").innerHTML + " Teh\n";
-  var message = [];
+  var SendMessage = [];
   for (var i = 0; i < 4; i++) {
     if (menu[i][0] > 0) {
-      message.push(menu[i]);
+      SendMessage.push(menu[i]);
     }
   }
   var username = document.getElementById("username").innerHTML;
   var message = "Hai " + username + ",\n\nTerima kasih telah berkunjung, berikut pesanannya:\n\n";
-  for (var i = 0; i < message.length; i++) {
-    message += message[i];
+  for (var i = 0; i < SendMessage.length; i++) {
+    message += SendMessage[i];
   }
   message += "\nPesanan Anda akan segera disiapkan.\n\nMohon ditunggu ya!";
   if (!liff.isInClient()) {
