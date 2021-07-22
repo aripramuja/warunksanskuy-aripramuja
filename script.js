@@ -11,7 +11,7 @@ const initializeLiff = (myLiffId) => {
       initializeApp();
     })
     .catch((err) => {
-      document.getElementById("liffAppContent").classList.add("hidden");
+      document.getElementById("liffAppContent").classList.addQuantity("hidden");
       document.getElementById("liffInitErrorMessage").classList.remove("hidden");
     });
 };
@@ -79,14 +79,14 @@ const postData = () => {
   localStorage.setItem("teh", teh);
 };
 
-const add = (data) => {
+const addQuantity = (data) => {
   document.getElementById(data).innerHTML++;
   orderQuantity();
   orderPrice();
   postData();
 };
 
-function minus(data) {
+function minusQuantity(data) {
   if (document.getElementById(data).innerHTML > 0) {
     document.getElementById(data).innerHTML--;
   }
